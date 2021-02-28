@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "author": "Sian Alcock",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "@babel/preset-react": "^7.12.13",
     "axios": "^0.21.1",
     "babel": "^6.23.0",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

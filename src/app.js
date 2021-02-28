@@ -145,6 +145,7 @@ class App extends React.Component {
     
       startPlayback() {
         const audioPromise = new Audio("./assets/countdown-1.mp3").play();
+        audioPromise.crossOrigin = 'anonymous'
         return audioPromise;
       }
 

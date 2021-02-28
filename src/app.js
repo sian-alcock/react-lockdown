@@ -299,6 +299,7 @@ class App extends React.Component {
               </p>
               <audio
                 controls
+                crossOrigin="anonymous"
                 src="./assets/countdown-1.mp3">
                     Your browser does not support the
                     <code>audio</code> element.
@@ -385,7 +386,7 @@ class App extends React.Component {
                     left: "0%",
                     transformOrigin: "100%",
                     transform: `rotate(${this.state.secondsDegrees}deg)`,
-                    background: "aqua",
+                    background: "#555555",
                     height: "4px",
                     width: "50%",
                   }}

@@ -2,11 +2,6 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import axios from "axios";
 import './index.css';
-import CountdownSound from './sound';
-
-
-
-
 
 class App extends React.Component {
     constructor() {
@@ -54,12 +49,12 @@ class App extends React.Component {
           total += vowelsArray[i][1];
         }
     
-        console.log({ total });
+        // console.log({ total });
     
         // Get random index
         const threshold = Math.floor(Math.random() * total);
     
-        console.log({ threshold });
+        // console.log({ threshold });
     
         // Find value that meets threshold
         total = 0;
@@ -113,7 +108,7 @@ class App extends React.Component {
           total += consonantsArray[i][1];
         }
     
-        console.log({ total });
+        // console.log({ total });
     
         // Get random index
         const threshold = Math.floor(Math.random() * total);
@@ -155,39 +150,17 @@ class App extends React.Component {
         // fetch best responses from CountDown API
         this.getComputerAnagrams(this.state.letters);
     
-        console.log(this.state.seconds);
+        // console.log(this.state.seconds);
         if (this.state.seconds && this.state.seconds > 0) {
-          console.log("Attempting to play automatically...");
+          console.log("This is definitely the new code....");
           this.timer = setInterval(this.countDown.bind(this), 1000);
-          this.startPlayback()
-
-            // <Sound
-            // url="./assets/countdown-1.mp3"
-            // playStatus={Sound.status.PLAYING}
-            // playFromPosition={300 /* in milliseconds */}
-            // onLoading={this.handleSongLoading}
-            // onPlaying={this.handleSongPlaying}
-            // onFinishedPlaying={this.handleSongFinishedPlaying}
-            // />
-          // return (
-          //   <Sound/>   
-          // )
-          // this.startPlayback()
-          //   .then(() => {
-          //     console.log("The play() Promise fulfilled! Rock on!");
-          //   })
-          //   .catch((error) => {
-          //     console.log("The play() Promise rejected!");
-          //     console.log("Use the Play button instead.");
-          //     console.log(error);
-          //   });
-          // this.timer = setInterval(this.countDown.bind(this), 1000);
+          this.startPlayback();
         }
       }
 
       countDown() {
         // Remove one second, set state so a re-render happens.
-        console.log("counting down the seconds ...");
+        // console.log("counting down the seconds ...");
     
         let countSeconds = this.state.seconds - 1;
         let secondsDegrees = this.state.secondsDegrees + 360 / 60;
@@ -205,9 +178,9 @@ class App extends React.Component {
         }
       }
       getComputerAnagrams(letterArray) {
-        console.log(letterArray);
+        // console.log(letterArray);
         const letterString = letterArray.join("").slice(0, 9);
-        console.log({ letterString });
+        // console.log({ letterString });
     
         axios
           .get(
@@ -221,7 +194,7 @@ class App extends React.Component {
             }
           )
           .then((response) => {
-            console.log(response.data);
+            // console.log(response.data);
             this.setState({ computerAnagrams: response.data });
           })
           .catch((error) => {
@@ -234,9 +207,9 @@ class App extends React.Component {
         const wordToCheck = event.target['inputWord'].value.toLowerCase();
         const lettersLowerCase = this.state.letters.join('|').toLowerCase().split('|');
     
-        console.log(wordToCheck)
-        console.log(wordToCheck.split(''))
-        console.log(this.state.letters)
+        // console.log(wordToCheck)
+        // console.log(wordToCheck.split(''))
+        // console.log(this.state.letters)
         
         if(wordToCheck.split('').every(letter => lettersLowerCase.includes(letter))) {
           this.setState({
@@ -269,7 +242,7 @@ class App extends React.Component {
         axios.get(`https://wordsapiv1.p.rapidapi.com/words/${wordToCheck}/definitions/`
         , config)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           this.setState({ 
             definitions: response.data['definitions'],
             wordCheckEmployed: true,

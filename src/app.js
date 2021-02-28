@@ -281,7 +281,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="profile"> 
-              <audio className="audio-element">
+              <audio className="audio-element" crossOrigin="anonymous">
                 <source src="./assets/countdown-1.mp3"></source>
               </audio>
             <div className="innerContainer">

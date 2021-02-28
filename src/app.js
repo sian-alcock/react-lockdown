@@ -2,6 +2,9 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import axios from "axios";
 import './index.css';
+import CountdownSound from './sound';
+
+
 
 
 
@@ -144,8 +147,8 @@ class App extends React.Component {
       }
     
       startPlayback() {
-        const audioPromise = new Audio("./assets/countdown-1.mp3").play();
-        return audioPromise;
+          const audioEl = document.getElementsByClassName("audio-element")[0]
+          audioEl.play()
       }
 
       startTimer() {
@@ -155,17 +158,30 @@ class App extends React.Component {
         console.log(this.state.seconds);
         if (this.state.seconds && this.state.seconds > 0) {
           console.log("Attempting to play automatically...");
-    
-          this.startPlayback()
-            .then(() => {
-              console.log("The play() Promise fulfilled! Rock on!");
-            })
-            .catch((error) => {
-              console.log("The play() Promise rejected!");
-              console.log("Use the Play button instead.");
-              console.log(error);
-            });
           this.timer = setInterval(this.countDown.bind(this), 1000);
+          this.startPlayback()
+
+            // <Sound
+            // url="./assets/countdown-1.mp3"
+            // playStatus={Sound.status.PLAYING}
+            // playFromPosition={300 /* in milliseconds */}
+            // onLoading={this.handleSongLoading}
+            // onPlaying={this.handleSongPlaying}
+            // onFinishedPlaying={this.handleSongFinishedPlaying}
+            // />
+          // return (
+          //   <Sound/>   
+          // )
+          // this.startPlayback()
+          //   .then(() => {
+          //     console.log("The play() Promise fulfilled! Rock on!");
+          //   })
+          //   .catch((error) => {
+          //     console.log("The play() Promise rejected!");
+          //     console.log("Use the Play button instead.");
+          //     console.log(error);
+          //   });
+          // this.timer = setInterval(this.countDown.bind(this), 1000);
         }
       }
 
@@ -291,13 +307,16 @@ class App extends React.Component {
     
     render() {
         return (
-            <div className="profile">
+            <div className="profile"> 
+              <audio className="audio-element">
+                <source src="./assets/countdown-1.mp3"></source>
+              </audio>
             <div className="innerContainer">
             <div className="instructionContainer">
               <p className={this.state.playMode === "choosingLetters" ? "instructionText" : "instructionTextOff" }>
                 Choose a letter
-              </p>
-            </div>
+              </p>         
+              </div>
     
             <div className="buttonContainer">
               <button

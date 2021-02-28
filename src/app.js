@@ -313,7 +313,7 @@ class App extends React.Component {
                 }
                 onClick={this.getVowel}
               >
-                Vowel
+                VOWEL
               </button>
               <button
                 className={
@@ -321,7 +321,7 @@ class App extends React.Component {
                 }
                 onClick={this.getConsonant}
               >
-                Consonant
+                CONSONANT
               </button>
             </div>
     

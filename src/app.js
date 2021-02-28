@@ -297,13 +297,6 @@ class App extends React.Component {
               <p className={this.state.playMode === "choosingLetters" ? "instructionText" : "instructionTextOff" }>
                 Choose a letter
               </p>
-              <audio
-                controls
-                crossOrigin="anonymous"
-                src="./assets/countdown-1.mp3">
-                    Your browser does not support the
-                    <code>audio</code> element.
-              </audio>
             </div>
     
             <div className="buttonContainer">

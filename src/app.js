@@ -138,7 +138,7 @@ class App extends React.Component {
 
       checkLetters() {
         if (this.state.letterCount === 9) {
-          console.log(this.state.letterCount);
+          // console.log(this.state.letterCount);
           this.setState({ playMode: "ready", seconds: 30 });
         }
       }
@@ -297,6 +297,12 @@ class App extends React.Component {
               <p className={this.state.playMode === "choosingLetters" ? "instructionText" : "instructionTextOff" }>
                 Choose a letter
               </p>
+              <audio
+                controls
+                src="./assets/countdown-1.mp3">
+                    Your browser does not support the
+                    <code>audio</code> element.
+              </audio>
             </div>
     
             <div className="buttonContainer">

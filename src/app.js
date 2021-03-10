@@ -30,6 +30,7 @@ class App extends React.Component {
           this.showComputerChoices = this.showComputerChoices.bind(this);
           this.checkWordInDictionary = this.checkWordInDictionary.bind(this);
           this.playAgain = this.playAgain.bind(this);
+          this.audioEl = new Audio("assets/countdown-1.mp3");
           
 
       }
@@ -142,9 +143,9 @@ class App extends React.Component {
       }
     
       startPlayback() {
-        const audioEl = new Audio("./assets/countdown-1.mp3");
-        audioEl.crossOrigin = 'anonymous';
-        audioEl.play();
+        // const audioEl = new Audio("assets/countdown-1.mp3");
+        // audioEl.crossOrigin = 'anonymous';
+        this.audioEl.play();
       }
 
       startTimer() {

@@ -287,7 +287,9 @@ class App extends React.Component {
     
     render() {
         return (
-            <div className="profile"> 
+          
+            <div className="profile">
+            <div className="headerBar"></div> 
             <div className="innerContainer">
             <div className="instructionContainer">
               <p className={this.state.playMode === "choosingLetters" ? "instructionText" : "instructionTextOff" }>
@@ -351,7 +353,7 @@ class App extends React.Component {
                 }
                 onClick={this.startTimer.bind(this)}
               >
-                Start Countdown
+                START COUNTDOWN
               </button>
             </div>
     
@@ -362,7 +364,7 @@ class App extends React.Component {
                 }
                 onClick={this.playAgain.bind(this)}
               >
-                Play again
+                PLAY AGAIN
               </button>
             </div>
     
@@ -387,7 +389,7 @@ class App extends React.Component {
               <div className="column">
                 <input className="answer" id="wordToCheck" name="inputWord" type="text" onChange={(e)=>this.inputHandler(e)} />
     
-                <button type="Submit" className="button">Check word in dictionary</button>
+                <button type="Submit" className="button">CHECK DICTIONARY</button>
               </div>
                 <div className="wordContainer">
                   {this.state.wordCheckEmployed && this.state.wordMismatch ? `❌ '${this.state.enteredText}' - word cannot be derived from letters above!` : this.state.wordCheckEmployed && !this.state.wordMismatch && this.state.definitions.length === 0

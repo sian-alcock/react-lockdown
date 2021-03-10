@@ -142,7 +142,7 @@ class App extends React.Component {
     
       startPlayback() {
         this.sound = new Audio();
-        this.sound.src = './assets/countdown-1.mp3';
+        this.sound.src = './src/assets/countdown-1.mp3';
         this.sound.load();
         this.sound.play()
           .then(() => {

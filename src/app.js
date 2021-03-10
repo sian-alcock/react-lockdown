@@ -135,15 +135,14 @@ class App extends React.Component {
 
       checkLetters() {
         if (this.state.letterCount === 9) {
-          // console.log(this.state.letterCount);
           this.setState({ playMode: "ready", seconds: 30 });
         }
       }
     
       startPlayback() {
-        this.sound = new Audio();
-        this.sound.src = '/assets/countdown-1.mp3';
+        this.sound = new Audio('./assets/countdown-1.mp3');
         this.sound.load();
+        console.log(this.sound.play());
         this.sound.play()
           .then(() => {
             // Audio is playing.
@@ -159,7 +158,7 @@ class App extends React.Component {
     
         // console.log(this.state.seconds);
         if (this.state.seconds && this.state.seconds > 0) {
-          console.log("Code updated at 12.41pm Wed 10 March 2021");
+          console.log("Code updated at 13.27pm Wed 10 March 2021");
           this.timer = setInterval(this.countDown.bind(this), 1000);
           this.startPlayback();
         }

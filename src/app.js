@@ -142,8 +142,8 @@ class App extends React.Component {
       }
     
       startPlayback() {
-          const audioEl = document.getElementsByClassName("audio-element")[0]
-          audioEl.play()
+        const audioEl = new Audio("assets/countdown-1.mp3");
+        audioEl.play()
       }
 
       startTimer() {
@@ -281,9 +281,6 @@ class App extends React.Component {
     render() {
         return (
             <div className="profile"> 
-              <audio className="audio-element" crossOrigin="anonymous">
-                <source src="./assets/countdown-1.mp3"></source>
-              </audio>
             <div className="innerContainer">
             <div className="instructionContainer">
               <p className={this.state.playMode === "choosingLetters" ? "instructionText" : "instructionTextOff" }>

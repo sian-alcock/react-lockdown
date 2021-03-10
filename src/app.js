@@ -142,11 +142,9 @@ class App extends React.Component {
       }
     
       startPlayback() {
-        const audioEl = new Audio("https://raw.githubusercontent.com/sian-alcock/react-countdown/master/assets/countdown-1.mp3")
-
-        // const audioEl = new Audio("./assets/countdown-1.mp3");
+        const audioEl = new Audio("./assets/countdown-1.mp3");
         audioEl.crossOrigin = 'anonymous';
-        audioEl.play()
+        audioEl.play();
       }
 
       startTimer() {
@@ -155,7 +153,7 @@ class App extends React.Component {
     
         // console.log(this.state.seconds);
         if (this.state.seconds && this.state.seconds > 0) {
-          console.log("Code updated at 12.19pm Wed 10 March 2021");
+          console.log("Code updated at 12.27pm Wed 10 March 2021");
           this.timer = setInterval(this.countDown.bind(this), 1000);
           this.startPlayback();
         }

@@ -29,9 +29,7 @@ class App extends React.Component {
           this.getComputerAnagrams = this.getComputerAnagrams.bind(this);
           this.showComputerChoices = this.showComputerChoices.bind(this);
           this.checkWordInDictionary = this.checkWordInDictionary.bind(this);
-          this.playAgain = this.playAgain.bind(this);
-          this.audioEl = new Audio("assets/countdown-1.mp3");
-          
+          this.playAgain = this.playAgain.bind(this);          
 
       }
 
@@ -143,9 +141,16 @@ class App extends React.Component {
       }
     
       startPlayback() {
-        // const audioEl = new Audio("assets/countdown-1.mp3");
-        // audioEl.crossOrigin = 'anonymous';
-        this.audioEl.play();
+        this.sound = new Audio();
+        this.sound.src = './assets/countdown-1.mp3';
+        this.sound.load();
+        this.sound.play()
+          .then(() => {
+            // Audio is playing.
+          })
+          .catch(error => {
+            console.log(error);
+          });
       }
 
       startTimer() {
@@ -154,7 +159,7 @@ class App extends React.Component {
     
         // console.log(this.state.seconds);
         if (this.state.seconds && this.state.seconds > 0) {
-          console.log("Code updated at 12.27pm Wed 10 March 2021");
+          console.log("Code updated at 12.41pm Wed 10 March 2021");
           this.timer = setInterval(this.countDown.bind(this), 1000);
           this.startPlayback();
         }

@@ -152,7 +152,7 @@ class App extends React.Component {
     
         // console.log(this.state.seconds);
         if (this.state.seconds && this.state.seconds > 0) {
-          console.log("This is definitely the new code....");
+          console.log("Code updated at 11.53am Wed 10 March 2021");
           this.timer = setInterval(this.countDown.bind(this), 1000);
           this.startPlayback();
         }

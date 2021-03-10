@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import axios from "axios";
 import './index.css';
+import soundfile from './assets/countdown-1.mp3';
 
 class App extends React.Component {
     constructor() {
@@ -140,7 +141,7 @@ class App extends React.Component {
       }
     
       startPlayback() {
-        this.sound = new Audio('./assets/countdown-1.mp3');
+        this.sound = new Audio(soundfile);
         this.sound.load();
         console.log(this.sound.play());
         this.sound.play()

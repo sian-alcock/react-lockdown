@@ -9,9 +9,15 @@ body {
 }
 
 .headerBar {
-  height: 50px;
+  height: 100%;
   background-color: #fbce3e;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pageTitle {
+  padding: 5px 0;
 }
 
 .innerContainer {

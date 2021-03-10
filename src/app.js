@@ -288,7 +288,7 @@ class App extends React.Component {
         return (
           
             <div className="profile">
-            <div className="headerBar"></div> 
+            <div className="headerBar"><h1 className="pageTitle">Countdown</h1></div> 
             <div className="innerContainer">
             <div className="instructionContainer">
               <p className={this.state.playMode === "choosingLetters" ? "instructionText" : "instructionTextOff" }>
